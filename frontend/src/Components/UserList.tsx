@@ -9,8 +9,6 @@ interface Props {
     user:User
 }
 
-
-
 export const UserList:React.FC = (/*{user}: Props*/) => {
     const [users, setUsers] = useState<any[]>([]);
 
@@ -28,9 +26,9 @@ export const UserList:React.FC = (/*{user}: Props*/) => {
         <div className="App">
           {users.map((user) => {
             return(
-                <li className="List">
+                <li className="col-md-4 card p-2">
                     <div className="List-header">
-                        <h2>Nom: {user.name}</h2>
+                        <h4>Nom: {user.name}</h4>
                     </div>
                     <p>Mail: {user.email}</p>
                     <p className="List-note">ID: {user._id}</p>
@@ -39,7 +37,5 @@ export const UserList:React.FC = (/*{user}: Props*/) => {
           })}
         </div>
       );
-    
 }
-
 export default UserList;

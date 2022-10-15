@@ -1,18 +1,24 @@
 import { Link } from "react-router-dom";
 
+
 function NavBar() {
     return (
-        <div>
-            <h1>EA: React Seminar</h1>
-            <ul className="navbar">
-                <li className="navbar">
-                    <Link  to="/" >User List</Link>
-                </li>
-                <li className="navbar">
-                    <Link  to="/add" >New User</Link>
-                </li>
-            </ul>
-        </div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className= "container">
+                <h1>EA: React Seminar</h1>
+            </div>
+            <div className= "collapse navbar-collapse">
+                <ul className="navbar-nav ml-auto">
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/" >User List</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/add" >New User</Link>
+                    </li>
+                </ul>
+                
+            </div>
+        </nav>
     );
   }
 
