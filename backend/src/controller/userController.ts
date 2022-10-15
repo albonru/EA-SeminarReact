@@ -65,11 +65,22 @@ const changePass = async (req: Request, res: Response) => {
 	}
 };
 
+const remove = async (req: Request, res: Response) => {
+	try {
+		await User.findByIdAndDelete(req.params.id);
+		res.status(200).json({ status: 'User deleted' });
+	}
+	catch(err) {
+		res.status(500).json({ message: 'User not found', err });
+	}
+};
+
 export default {
 	register,
 	login,
 	profile,
 	getall,
 	getone,
-	changePass
+	changePass,
+	remove
 };
