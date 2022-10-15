@@ -20,6 +20,17 @@ export const UserList:React.FC = (/*{user}: Props*/) => {
     useEffect(() => {
       loadUsers()
     }, [])
+
+    // const deleteUser = () => {
+    //   UserService.remove(user)
+    //       .then((response: any) => {
+    //           console.log(response.data);
+    //           navigate("/");
+    //       })
+    //       .catch((e: Error) => {
+    //           console.log(e);
+    //       });
+    // };
     
       return (
        
@@ -32,6 +43,7 @@ export const UserList:React.FC = (/*{user}: Props*/) => {
                     </div>
                     <p>Mail: {user.email}</p>
                     <p className="List-note">ID: {user._id}</p>
+                    {/* <button id='deleteBtn' onClick={deleteUser}>Delete</button> */}
                 </li>
             );
           })}
