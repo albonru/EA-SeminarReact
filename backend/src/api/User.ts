@@ -9,6 +9,6 @@ router.get('/profile', userController.profile);
 router.get('/', userController.getall);
 router.get('/:id', userController.getone);
 router.put('/forgotpass/:id', userController.changePass);
-router.delete('/delete/:id', userController.remove);
+router.delete('/delete/:name', userController.remove);
 
 export default router;

@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className= "container">
-                <h1>EA: React Seminar</h1>
-            </div>
             <div className= "collapse navbar-collapse">
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">

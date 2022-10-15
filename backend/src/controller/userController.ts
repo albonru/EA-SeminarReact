@@ -67,7 +67,8 @@ const changePass = async (req: Request, res: Response) => {
 
 const remove = async (req: Request, res: Response) => {
 	try {
-		await User.findByIdAndDelete(req.params.id);
+		const user = await User.find({ name: req.params.name });
+		await User.deleteOne(user);
 		res.status(200).json({ status: 'User deleted' });
 	}
 	catch(err) {
