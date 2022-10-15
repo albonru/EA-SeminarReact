@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function AddUser() {
     return(
-        <div></div>
+        <div> add </div>
     );
 }
 
