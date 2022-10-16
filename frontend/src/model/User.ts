@@ -1,7 +1,12 @@
 export interface User {
-    _id: string;
+    
     name: string;
     password: string;
     email: string;
+    _id?: string;
 }
 export {};
+
+
+
+//? indica q es opcional

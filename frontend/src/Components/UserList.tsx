@@ -39,3 +39,8 @@ export const UserList:React.FC = (/*{user}: Props*/) => {
       );
 }
 export default UserList;
+
+//Ns com posar-ho dins llavors ho faig a fora, sry
+export const createUser = async (user:User) => {
+  return await axios.post('http://localhost:3000/api/users',user)
+}
