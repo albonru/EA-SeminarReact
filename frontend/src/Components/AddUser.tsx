@@ -11,6 +11,8 @@ type InputChange = ChangeEvent<HTMLInputElement>;
 
 
 const AddUser: React.FC = () => {
+
+    let navigate = useNavigate();
   const [userState, setState] = useState<User>({
     name: "",
     password: "", 
@@ -25,7 +27,7 @@ const AddUser: React.FC = () => {
     e.preventDefault();
     const res = await userService.createUser(userState);
     console.log(res);
-
+    navigate('/');
   };
 
   
@@ -52,7 +54,6 @@ const AddUser: React.FC = () => {
                 <input
                     type="email"
                     name="email"
-                    
                     onChange={handleVariableChange}
                 />
             </div>
@@ -71,7 +72,6 @@ const AddUser: React.FC = () => {
             <div className="button">
             <input 
                 type="submit" 
-                
             />            
             </div>
         </div>
@@ -80,5 +80,4 @@ const AddUser: React.FC = () => {
     </div>
   );
 };
-
 export default AddUser;

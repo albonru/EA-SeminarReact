@@ -26,14 +26,12 @@ export const UserList:React.FC = (/*{user}: Props*/) => {
     const remove = async (name: any) => {
       const res = await userService.delUser(name);
       console.log(res);
+      navigate('/');
     }
 
     const deleteUser = (user: any) => {
       remove(user).then((response: any) => {
-        console.log(response.data);
-        navigate('/');
-        
-        
+        console.log(response.data);      
       })
     }
     
@@ -49,11 +47,13 @@ export const UserList:React.FC = (/*{user}: Props*/) => {
                     </div>
                     <p>Mail: {user.email}</p>
                     <p className="List-note">ID: {user._id}</p>
-                    <button id='deleteBtn' onClick={ () => deleteUser(user.name)}>
-                      
-                      <Link to={"/users"}> Delete</Link>
-                      
-                    </button>
+                    
+                      <Link className="button" to={"/users"}>
+                      <button id='deleteBtn' onClick={ () => deleteUser(user.name)}>
+                         Delete
+                         </button>  
+                         </Link>
+                  
                     
                 </li>
               </div>
@@ -63,3 +63,4 @@ export const UserList:React.FC = (/*{user}: Props*/) => {
       );
 }
 export default UserList;
+//<Link to={"/users"}> Delete</Link>
