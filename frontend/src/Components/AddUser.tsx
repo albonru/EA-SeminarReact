@@ -2,8 +2,10 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { User } from "../model/User";
 import * as userService from '../Service/UserService'
+import { Link, Navigate, useNavigate } from "react-router-dom"
 //import { STATES } from "mongoose";
 //import {useHistory} from 'react-router-dom'
+import UserList from './UserList';
 
 type InputChange = ChangeEvent<HTMLInputElement>;
 
@@ -22,9 +24,8 @@ const AddUser: React.FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const res = await userService.createUser(userState);
-    console.log(res)
-    
-    
+    console.log(res);
+
   };
 
   
@@ -70,7 +71,8 @@ const AddUser: React.FC = () => {
             <div className="button">
             <input 
                 type="submit" 
-            />
+                
+            />            
             </div>
         </div>
 

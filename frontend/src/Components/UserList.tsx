@@ -1,7 +1,6 @@
 import { Link, Navigate, useNavigate } from "react-router-dom"
 import {User} from '../model/User'
 import React from 'react'
-import axios from 'axios'
 import { ChangeEvent, useEffect, useState } from 'react'
 import * as userService from '../Service/UserService'
 
@@ -16,7 +15,7 @@ export const UserList:React.FC = (/*{user}: Props*/) => {
     let navigate = useNavigate();
 
     const loadUsers = async () => {
-      const res = await axios.get('http://localhost:5432/api/users');
+      const res = await userService.getAllUser();
       setUsers(res.data);
     }
     
@@ -25,7 +24,7 @@ export const UserList:React.FC = (/*{user}: Props*/) => {
     }, [])
 
     const remove = async (name: any) => {
-      const res = await axios.delete(`http://localhost:5432/api/users/delete/${name}`);
+      const res = await userService.delUser(name);
       console.log(res);
     }
 
@@ -33,6 +32,8 @@ export const UserList:React.FC = (/*{user}: Props*/) => {
       remove(user).then((response: any) => {
         console.log(response.data);
         navigate('/');
+        
+        
       })
     }
     
@@ -48,7 +49,12 @@ export const UserList:React.FC = (/*{user}: Props*/) => {
                     </div>
                     <p>Mail: {user.email}</p>
                     <p className="List-note">ID: {user._id}</p>
-                    <button id='deleteBtn' onClick={ () => deleteUser(user.name)}>Delete</button>
+                    <button id='deleteBtn' onClick={ () => deleteUser(user.name)}>
+                      
+                      <Link to={"/users"}> Delete</Link>
+                      
+                    </button>
+                    
                 </li>
               </div>
             );
