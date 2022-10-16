@@ -3,8 +3,8 @@ import { isWhiteSpaceLike } from "typescript";
 
 function Header() {
     let s = {
-        backgroundColor:'black',
-        color: 'white'
+        backgroundColor:'white',
+        color: 'black'
     }
     return(
         <div> 

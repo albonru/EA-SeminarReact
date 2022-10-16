@@ -3,6 +3,7 @@ import {User} from '../model/User'
 import React from 'react'
 import axios from 'axios'
 import { ChangeEvent, useEffect, useState } from 'react'
+import * as userService from '../Service/UserService'
 
 
 interface Props {
@@ -40,6 +41,7 @@ export const UserList:React.FC = (/*{user}: Props*/) => {
         <div className="App">
           {users.map((user) => {
             return(
+              <div className="container">
                 <li className="col-md-4 card p-2">
                     <div className="List-header">
                         <h4>Nom: {user.name}</h4>
@@ -48,6 +50,7 @@ export const UserList:React.FC = (/*{user}: Props*/) => {
                     <p className="List-note">ID: {user._id}</p>
                     <button id='deleteBtn' onClick={ () => deleteUser(user.name)}>Delete</button>
                 </li>
+              </div>
             );
           })}
         </div>
