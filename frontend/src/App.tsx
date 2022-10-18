@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 
-import './App.css';
 
 import UserList from './Components/UserList';
 import AddUser from './Components/AddUser';

@@ -2,17 +2,17 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { User } from "../model/User";
 import * as userService from '../Service/UserService'
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import {useNavigate } from "react-router-dom"
 //import { STATES } from "mongoose";
 //import {useHistory} from 'react-router-dom'
-import UserList from './UserList';
+
 
 type InputChange = ChangeEvent<HTMLInputElement>;
 
 
 const AddUser: React.FC = () => {
 
-    let navigate = useNavigate();
+  let navigate = useNavigate();
   const [userState, setState] = useState<User>({
     name: "",
     password: "", 
@@ -39,10 +39,11 @@ const AddUser: React.FC = () => {
           <div className="mb-3">
             <div className="card-body">
               <label>Name : </label>
-              <input 
-                type="text" 
-                name="name" 
-                onChange={handleVariableChange} />
+                <input 
+                  type="text" 
+                  name="name" 
+                  onChange={handleVariableChange} />
+
             </div>
           </div>
         </div>

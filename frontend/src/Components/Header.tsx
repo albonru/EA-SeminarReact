@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { isWhiteSpaceLike } from "typescript";
+
 
 function Header() {
     let s = {
@@ -8,7 +7,9 @@ function Header() {
     }
     return(
         <div> 
-            <h1 style= {s}>EA: React Seminar</h1>  
+            <h1 style= {s}>
+                EA: React Seminar
+            </h1>  
         </div>
     );
 }
